@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clinical Protocol Schema Converter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+
+<div class="bg-white p-6 rounded shadow">
+  <h1 class="text-xl font-bold mb-4">USDM ↔ ICH-M11 Protocol Converter</h1>
+
+  <div class="grid grid-cols-4 gap-4 mb-4">
+    <input id="protocolId" class="border p-2 rounded" placeholder="Protocol ID">
+
+    <select id="inputSchema" class="border p-2">
+      <option>USDM</option>
+      <option>ICH-M11</option>
+    </select>
+
+    <select id="outputSchema" class="border p-2">
+      <option>ICH-M11</option>
+      <option>USDM</option>
+    </select>
+
+    <button onclick="convert()" class="bg-blue-600 text-white p-2 rounded">
+      Convert
+    </button>
+  </div>
+</div>
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+  <div class="bg-white p-4 rounded shadow">
+    <h2 class="font-bold mb-2">Input Schema</h2>
+    <pre id="leftTree" class="text-sm overflow-auto h-[600px]"></pre>
+  </div>
+
+  <div class="bg-white p-4 rounded shadow">
+    <h2 class="font-bold mb-2">Output Schema</h2>
+    <pre id="rightTree" class="text-sm overflow-auto h-[600px]"></pre>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
